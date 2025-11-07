@@ -5,6 +5,7 @@ package controller;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.mycompany.segundoevaluableinterfaces.vista.Sound;
 import com.mycompany.segundoevaluableinterfaces.vista.Vista;
 import java.awt.Color;
 import java.io.File;
@@ -22,11 +23,12 @@ public class DocumentoController {
 
     private Vista vista; 
     private DocumentoModelo document; 
-    
+    private Sound sonido; 
    
-    public DocumentoController(Vista vista){
+    public DocumentoController(Vista vista, Sound sonido){
          
         this.vista = vista; 
+        this.sonido = sonido; 
     }
     
     
@@ -163,6 +165,13 @@ public class DocumentoController {
     // Music 
     
     public void musicaWord(String palabra){
-        
+        switch(palabra){
+            case "candy": {
+                sonido.play(1, false, "music");
+                break; 
+            }
+            default: 
+                break; 
+        }
     }
 }

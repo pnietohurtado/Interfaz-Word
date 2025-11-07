@@ -37,7 +37,7 @@ public class Vista extends javax.swing.JFrame {
     private Font font; 
     private Sound sonido; 
     
-    DocumentoController documentController = new DocumentoController(this); 
+    DocumentoController documentController; 
     
     public Vista() {
         initComponents();
@@ -48,6 +48,7 @@ public class Vista extends javax.swing.JFrame {
         Size.setValue(12);
         
         sonido = new Sound(); 
+        documentController = new DocumentoController(this, sonido); 
         
         font = new Font("Garamond", Font.PLAIN, 12);  
         attri = new SimpleAttributeSet(); 
@@ -341,7 +342,7 @@ public class Vista extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
-        sonido.play(1, false, "music");
+        this.documentController.musicaWord(Text.getSelectedText());
     }//GEN-LAST:event_jToggleButton2MouseClicked
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
