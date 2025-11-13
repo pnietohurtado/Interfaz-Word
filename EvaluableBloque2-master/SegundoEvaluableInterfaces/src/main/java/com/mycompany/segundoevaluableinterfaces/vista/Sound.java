@@ -29,7 +29,7 @@ public class Sound {
         soundURL[1] = getClass().getResource("/sonido/PlanB.wav"); 
         soundURL[2] = getClass().getResource("/sonido/Aplauso.wav"); 
         soundURL[3] = getClass().getResource("/sonido/Gargola.wav"); 
-        soundURL[4] = getClass().getResource("/sonido/Hablando.wav"); 
+        soundURL[4] = getClass().getResource("/sonido/Diabla.wav"); 
         soundURL[5] = getClass().getResource("/sonido/pokemon_battle.wav"); // Batalla pokemon 
         soundURL[6] = getClass().getResource("/sonido/BattleMewTwo.wav");
         soundURL[7] = getClass().getResource("/sonido/MainTheme.wav");

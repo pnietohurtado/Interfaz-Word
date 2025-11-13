@@ -58,6 +58,9 @@ public class Vista extends javax.swing.JFrame {
         
         // Cargar un estilo de pantalla "Moderno" 
         documentController.changeTheme(); // Tick
+        Music.setIcon(new ImageIcon(getClass().getResource("/Icons/Nota.png")));
+        Deep.setIcon(new ImageIcon(getClass().getResource("/Icons/Deep.png")));
+        Tipo.setIcon(new ImageIcon(getClass().getResource("/Icons/Corte.png")));
     }
 
     /**
@@ -74,9 +77,9 @@ public class Vista extends javax.swing.JFrame {
         Theme = new javax.swing.JToggleButton();
         Size = new javax.swing.JSpinner();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        Music = new javax.swing.JToggleButton();
+        Deep = new javax.swing.JToggleButton();
+        Tipo = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -109,31 +112,31 @@ public class Vista extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Music.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton2MouseClicked(evt);
+                MusicMouseClicked(evt);
             }
         });
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        Music.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                MusicActionPerformed(evt);
             }
         });
 
-        jToggleButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Deep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton3MouseClicked(evt);
+                DeepMouseClicked(evt);
             }
         });
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        Deep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                DeepActionPerformed(evt);
             }
         });
 
-        jToggleButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton4MouseClicked(evt);
+                TipoMouseClicked(evt);
             }
         });
 
@@ -208,11 +211,11 @@ public class Vista extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Size, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
-                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Deep, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Music, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Theme, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -229,10 +232,10 @@ public class Vista extends javax.swing.JFrame {
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Tipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Theme, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jToggleButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Music, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Deep, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -314,32 +317,32 @@ public class Vista extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenu1MouseClicked
 
-    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+    private void MusicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MusicMouseClicked
         this.documentController.musicaWord(Text.getSelectedText());
-    }//GEN-LAST:event_jToggleButton2MouseClicked
+    }//GEN-LAST:event_MusicMouseClicked
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void MusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MusicActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_MusicActionPerformed
 
-    private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
+    private void DeepMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeepMouseClicked
         OllamaController ollama = new OllamaController(); 
         String mens = ollama.Traduccion(Text.getText());
         Text.setText(mens);
-    }//GEN-LAST:event_jToggleButton3MouseClicked
+    }//GEN-LAST:event_DeepMouseClicked
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void DeepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_DeepActionPerformed
 
-    private void jToggleButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseClicked
+    private void TipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TipoMouseClicked
         String tipo[] = {"Times New Roman", "Comic Sans MS", "Courier New"}; 
         Random r = new Random(); 
         int n = r.nextInt(3); 
         System.out.println("Pulsado");
         this.documentController.cambiarFuente(tipo[n]);
         
-    }//GEN-LAST:event_jToggleButton4MouseClicked
+    }//GEN-LAST:event_TipoMouseClicked
 
     
     
@@ -414,9 +417,12 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Deep;
+    private javax.swing.JToggleButton Music;
     private javax.swing.JSpinner Size;
     private javax.swing.JTextPane Text;
     private javax.swing.JToggleButton Theme;
+    private javax.swing.JToggleButton Tipo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -427,8 +433,5 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,17 +26,20 @@ public class DocumentoController {
     private Vista vista; 
     private DocumentoModelo document; 
     private Sound sonido; 
+    private int numero; 
    
     public DocumentoController(Vista vista, Sound sonido){
          
         this.vista = vista; 
         this.sonido = sonido; 
+        this.numero = 0; 
     }
     
     
      public DocumentoController(DocumentoModelo doc, Vista vista ){
         this.document = doc; 
         this.vista = vista; 
+        this.numero = 0; 
     }
     
     
@@ -169,15 +172,31 @@ public class DocumentoController {
     public void musicaWord(String palabra){
         switch(palabra){
             case "candy": {
+                if(numero!=0)
+                    sonido.stop(numero); 
                 sonido.play(1, false, "music");
+                this.numero = 1; 
                 break; 
             }
             case "aplauso": {
+                if(numero!=0)
+                    sonido.stop(numero);
                 sonido.play(2, false, "music");
+                this.numero = 2; 
                 break; 
             }
             case "gargola" : {
+                if(numero!=0)
+                    sonido.stop(numero);
                 sonido.play(3,false, "music"); 
+                this.numero = 3; 
+                break; 
+            }
+            case "diabla" : {
+                if(numero!=0)
+                    sonido.stop(numero);
+                sonido.play(4,false, "music"); 
+                this.numero = 4; 
                 break; 
             }
             default: 
