@@ -15,6 +15,8 @@ import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import modelo.DocumentoModelo;
 
@@ -170,8 +172,25 @@ public class DocumentoController {
                 sonido.play(1, false, "music");
                 break; 
             }
+            case "aplauso": {
+                sonido.play(2, false, "music");
+                break; 
+            }
+            case "gargola" : {
+                sonido.play(3,false, "music"); 
+                break; 
+            }
             default: 
+                
                 break; 
         }
+    }
+    
+    
+    // Cambiar fuente 
+    public void cambiarFuente(String font){
+        MutableAttributeSet attrs = new SimpleAttributeSet();
+        StyleConstants.setFontFamily(attrs, font);
+        this.vista.getTextElement().setCharacterAttributes(attrs, false);
     }
 }
